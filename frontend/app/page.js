@@ -1,3 +1,7 @@
+'use client';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
@@ -5,11 +9,9 @@ export default function Home() {
       {/* Navbar */}
       <nav className="flex items-center justify-between px-8 py-4 border-b">
         <h1 className="text-2xl font-bold text-blue-600">PartyNest</h1>
-        <div className="flex gap-4">
-          <a href="/login" className="text-gray-600 hover:text-blue-600">Login</a>
-          <a href="/host" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-            List Your Space
-          </a>
+        <div className="flex gap-4 items-center">
+          <a href="/login" className="text-gray-600 hover:text-blue-600 text-sm">Login</a>
+          <Button>List Your Space</Button>
         </div>
       </nav>
 
@@ -24,14 +26,14 @@ export default function Home() {
 
         {/* Search Bar */}
         <div className="flex gap-2 bg-white shadow-md rounded-xl p-2 w-full max-w-lg">
-          <input
+          <Input
             type="text"
             placeholder="Search by location (e.g. HSR Layout)"
-            className="flex-1 px-4 py-2 outline-none text-gray-700"
+            className="flex-1 border-none outline-none shadow-none"
           />
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+          <Button onClick={() => window.location.href = '/venues'}>
             Search
-          </button>
+          </Button>
         </div>
       </section>
 
